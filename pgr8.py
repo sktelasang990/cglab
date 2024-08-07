@@ -16,11 +16,9 @@ scaled_image = cv2.resize(image, None, fx=scale_factor, fy=scale_factor)
 x_translation, y_translation = 50, 50
 translation_matrix = np.float32([[1, 0, x_translation], [0, 1, y_translation]])
 translated_image = cv2.warpAffine(image, translation_matrix, (width, height))
-# Display images
 cv2.imshow("Original Image", image)
 cv2.imshow("Rotated Image", rotated_image)
 cv2.imshow("Scaled Image", scaled_image)
 cv2.imshow("Translated Image", translated_image)
-# Wait for a key press and close all windows
 cv2.waitKey(0)
 cv2.destroyAllWindows()
