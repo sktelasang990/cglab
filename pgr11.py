@@ -5,7 +5,7 @@ if image is None:
     exit()
 gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 blurred_image = cv2.GaussianBlur(gray_image, (5, 5), 0)
-_, threshold_image = cv2.threshold(blurred_image, 127, 255, cv2.THRESH_BINARY)
+threshold_image = cv2.threshold(blurred_image, 127, 255, cv2.THRESH_BINARY)
 contours, _ = cv2.findContours(threshold_image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 contour_image = image.copy()
 cv2.drawContours(contour_image, contours, -1, (0, 255, 0), 2)
