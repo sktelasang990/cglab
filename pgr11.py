@@ -1,9 +1,5 @@
 import cv2
-
-# Load the image
 image = cv2.imread("p3.jpg")
-
-# Check if the image is loaded successfully
 if image is None:
     print("Error: Unable to load image.")
     exit()
